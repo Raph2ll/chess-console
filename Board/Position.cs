@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace chess_console.board
+namespace chess_console.Board
 {
     public class Position
     {
         public int Line { get; set; }
         public int Column { get; set; }
 
-        public Posicao(int line, int column) {
+        public Position(int line, int column) {
             Line = line;
             Column = column;
         }
@@ -21,7 +21,7 @@ namespace chess_console.board
         }
 
         public override string ToString() {
-            return $"{Line} , {Column}"
+            return $"{Line} , {Column}";
         }
     }
 }
