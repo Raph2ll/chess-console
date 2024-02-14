@@ -10,11 +10,12 @@ namespace chess_console.Board
         public int QtyMovements { get; protected set; }
         public BoardService Board { get; protected set; }
 
-        public Piece(Position position, Colors color, BoardService board)
+        public Piece(Colors color, BoardService board)
         {
-            Position = position;
+            Position = null;
             Color = color;
             Board = board;
+            QtyMovements = 0;
         }
     }
 }
