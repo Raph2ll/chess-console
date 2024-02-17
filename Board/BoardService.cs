@@ -28,13 +28,23 @@ namespace chess_console.Board
         }
         public void PlacePiece(Piece piece, Position position)
         {
-            if (ExistPiece(position)){
+            if (ExistPiece(position))
+            {
                 throw new BoardException("There is already a piece in that position");
             }
             Pieces[position.Line, position.Column] = piece;
             piece.Position = position;
         }
+        public Piece RemovePiece(Position position)
+        {
+            if (Piece(position) == null) { return null; }
+            Piece aux = Piece(position);
+            aux.Position = null;
 
+            Pieces[position.Line, position.Column] = null;
+
+            return aux;
+        }
         public bool ValidPosition(Position position)
         {
             if (position.Line < 0 || position.Line >= Lines || position.Column < 0 || position.Column >= Columns)
