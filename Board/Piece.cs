@@ -17,5 +17,9 @@ namespace chess_console.Board
             Board = board;
             QtyMovements = 0;
         }
+        public void MovimentQtyIncrement()
+        {
+            QtyMovements ++;
+        }
     }
 }
