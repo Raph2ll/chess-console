@@ -3,7 +3,7 @@ using chess_console.Board.Enum;
 
 namespace chess_console.Board
 {
-    public class Piece
+    abstract class Piece
     {
         public Position Position { get; set; }
         public Colors Color { get; protected set; }
@@ -17,9 +17,10 @@ namespace chess_console.Board
             Board = board;
             QtyMovements = 0;
         }
+        public abstract bool[,] PossibleMovements();
         public void MovimentQtyIncrement()
         {
-            QtyMovements ++;
+            QtyMovements++;
         }
     }
 }
