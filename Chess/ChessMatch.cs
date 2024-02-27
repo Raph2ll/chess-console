@@ -13,11 +13,13 @@ namespace chess_console.Chess
         public BoardService Board { get; private set; }
         private int Shift;
         private Colors CurrentPlayer;
+        public bool Finished {get; private set;}
         public ChessMatch()
         {
             Board = new BoardService(8, 8);
             Shift = 1;
             CurrentPlayer = Colors.White;
+            Finished = false;
             PlacePieces();
         }
 

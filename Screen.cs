@@ -1,6 +1,8 @@
 using System;
+using System.Net.NetworkInformation;
 using chess_console.Board;
 using chess_console.Board.Enum;
+using chess_console.Chess;
 
 namespace chess_console
 {
@@ -27,7 +29,14 @@ namespace chess_console
             }
             Console.WriteLine("  A B C D E F G H");
         }
+        public static ChessPosition ReadChessPosition()
+        {
+            string s = Console.ReadLine();
+            char column = s[0];
+            int line = int.Parse($"{s[1]} ");
 
+            return new ChessPosition(column, line);
+        }
         public static void PrintPiece(Piece piece)
         {
             if (piece.Color == Colors.White)
