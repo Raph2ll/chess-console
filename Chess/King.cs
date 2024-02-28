@@ -67,6 +67,7 @@ namespace chess_console.Chess
             {
                 mat[position.Line, Position.Column] = true;
             }
+            return mat;
         }
         public override string ToString()
         {
