@@ -8,8 +8,8 @@ namespace chess_console.Chess
 {
     public class ChessPosition
     {
-        public char Column;
-        public int Line;
+        public char Column { get; set; }
+        public int Line { get; set; }
 
         public ChessPosition(char column, int line)
         {
@@ -18,7 +18,7 @@ namespace chess_console.Chess
         }
         public Position ToPosition()
         {
-            return new Position(8- Line, Column - 'a');
+            return new Position(8 - Line, Column - 'a');
         }
         public override string ToString()
         {
