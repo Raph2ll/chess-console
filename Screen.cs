@@ -15,15 +15,7 @@ namespace chess_console
                 Console.Write($"{8 - l} ");
                 for (int c = 0; c < board.Columns; c++)
                 {
-                    if (board.Piece(l, c) == null)
-                    {
-                        Console.Write($"- ");
-                    }
-                    else
-                    {
-                        PrintPiece(board.Piece(l, c));
-                        Console.Write(" ");
-                    }
+                    PrintPiece(board.Piece(l, c));
                 }
                 Console.WriteLine();
             }
@@ -39,17 +31,25 @@ namespace chess_console
         }
         public static void PrintPiece(Piece piece)
         {
-            if (piece.Color == Colors.White)
+            if (piece == null)
             {
-                Console.Write(piece);
+                Console.Write($"- ");
             }
             else
             {
-                ConsoleColor aux = Console.ForegroundColor;
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.Write(piece);
-                Console.ForegroundColor = aux;
+                if (piece.Color == Colors.White)
+                {
+                    Console.Write(piece);
+                }
+                else
+                {
+                    ConsoleColor aux = Console.ForegroundColor;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write(piece);
+                    Console.ForegroundColor = aux;
 
+                }
+                Console.Write(" ");
             }
         }
     }
