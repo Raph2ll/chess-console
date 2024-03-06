@@ -3,7 +3,7 @@ using chess_console.Board.Enum;
 
 namespace chess_console.Board
 {
-    abstract class Piece
+    public abstract class Piece
     {
         public Position Position { get; set; }
         public Colors Color { get; protected set; }
