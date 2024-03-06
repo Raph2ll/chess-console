@@ -30,7 +30,7 @@ namespace chess_console.Chess
                 }
                 position.Line = position.Line - 1;
             }
-            return mat;
+
             // down
             position.SetValues(position.Line + 1, position.Column);
             while (Board.ValidPosition(position) && CanMove(position))
@@ -42,7 +42,7 @@ namespace chess_console.Chess
                 }
                 position.Line = position.Line + 1;
             }
-            return mat;
+
             // right
             position.SetValues(position.Line, position.Column + 1);
             while (Board.ValidPosition(position) && CanMove(position))
@@ -54,7 +54,7 @@ namespace chess_console.Chess
                 }
                 position.Column = position.Column + 1;
             }
-            return mat;
+
             // left
             position.SetValues(position.Line, position.Column - 1);
             while (Board.ValidPosition(position) && CanMove(position))
